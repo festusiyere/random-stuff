@@ -13,13 +13,40 @@
 </head>
 
 <body>
-    <header>
+    <header class="lg-desktop">
         <div class="logo">
             <a href="https://femiosophotography.com/">
                 <img src="https://femiosophotography.com/wp-content/uploads/2021/06/Femi-OSo-Logo-2.png"
                     alt="FemiOso Photography">
             </a>
         </div>
+
+        <div class="links">
+            <div>
+                <a href="" class="link--item">Home</a>
+            </div>
+            <div>
+                <a href="" class="link--item">Portfolio</a>
+            </div>
+            <div>
+                <a href="" class="link--item">Booking</a>
+            </div>
+        </div>
+    </header>
+    <header class="sm-mobile">
+        <div class="logo">
+            <a href="https://femiosophotography.com/">
+                <img src="https://femiosophotography.com/wp-content/uploads/2021/06/Femi-OSo-Logo-2.png"
+                    alt="FemiOso Photography">
+            </a>
+        </div>
+
+        <div class="toggler">
+            <a href="#" class="nav__toggler">
+                <span></span>
+            </a>
+        </div>
+
 
         <div class="links">
             <div>
@@ -94,6 +121,14 @@
 
         </div>
     </div>
+    <script>
+        const mobileNav = document.querySelector('.sm-mobile')
+        const toggler = document.querySelector('.nav__toggler')
+        toggler.addEventListener('click', function (evt) {
+            evt.preventDefault()
+            mobileNav.classList.toggle('open')
+        })
+    </script>
 </body>
 
 </html>

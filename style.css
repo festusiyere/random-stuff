@@ -12,36 +12,142 @@ html {
 	font-family: 'Ubuntu', sans-serif;
 }
 
-header {
+header.lg-desktop,
+header.sm-mobile {
 	width: 100%;
 	position: fixed;
 	top: 0;
 	display: flex;
 	align-items: center;
-	z-index: 8;
+	z-index: 15;
 	padding: 1rem 2rem;
 }
 
-header .logo img {
+header.lg-desktop .logo img {
 	max-width: 150px;
 }
 
-header .links {
+header.lg-desktop .links {
 	margin-left: auto;
 	display: flex;
 	align-items: center;
 }
 
-header .links div {
+header.lg-desktop .links div {
 	margin: 0 15px;
 }
 
-header .links a {
+header.lg-desktop .links a {
 	text-decoration: none;
 	color: #fff;
 	font-weight: bold;
 	text-transform: uppercase;
 	filter: drop-shadow(0 0 15px #00000033) drop-shadow(0 0 5px #00000011);
+}
+
+header.sm-mobile {
+	display: none;
+	padding: 1rem;
+}
+
+header.sm-mobile .logo img {
+	max-width: 120px;
+}
+
+header.sm-mobile .links {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.911);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	pointer-events: none;
+}
+
+header.sm-mobile .links div {
+	margin: 1rem 0;
+}
+
+header.sm-mobile .links a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	filter: drop-shadow(0 0 15px #00000033) drop-shadow(0 0 5px #00000011);
+}
+
+header.sm-mobile .toggler {
+	margin-left: auto;
+}
+header.sm-mobile .nav__toggler {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	z-index: 4;
+	margin-top: 4px;
+	height: 24px;
+	width: 24px;
+}
+
+header.sm-mobile span,
+header.sm-mobile span::after,
+header.sm-mobile span::before {
+	background-color: #fff;
+	width: 100%;
+	width: 25px;
+	height: 3px;
+	display: block;
+	position: absolute;
+	border-radius: 2px;
+	transition: transform 0.3s ease;
+}
+header.sm-mobile span::after,
+header.sm-mobile span::before {
+	content: '';
+}
+
+header.sm-mobile span::before {
+	top: 9px;
+}
+
+header.sm-mobile span::after {
+	top: 18px;
+}
+
+.sm-mobile.open .toggler span {
+	background-color: rgba(#fff, 0.7);
+	transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.sm-mobile.open .toggler span:before {
+	background-color: rgba(#fff, 0.7);
+	opacity: 0;
+	transform: rotate(45deg) translate3d(-5.71429px, -6px, 0);
+}
+
+.sm-mobile.open .toggler span:after {
+	background-color: rgba(#fff, 0.7);
+	transform: translate3d(0, -18px, 0) rotate(90deg);
+}
+
+header.sm-mobile.open .links {
+	opacity: 1;
+	pointer-events: all;
+}
+@media screen and (max-width: 600px) {
+	header.lg-desktop {
+		display: none;
+	}
+
+	header.sm-mobile {
+		display: flex;
+	}
 }
 
 .sidebar-logo {
