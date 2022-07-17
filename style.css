@@ -222,6 +222,25 @@ header.sm-mobile.open .links {
 	margin-bottom: 10px;
 }
 
+@media screen and (max-width: 600px) {
+	.content .grid-item:nth-child(1) {
+		padding-right: 2.5px;
+	}
+
+	.content .grid-item:nth-child(2) {
+		padding-right: 2.5px;
+		padding-left: 2.5px;
+	}
+
+	.content .grid-item:nth-child(3) {
+		padding-left: 2.5px;
+	}
+
+	.content img {
+		margin-bottom: 5px;
+	}
+}
+
 @keyframes slideUp {
 	0% {
 		-webkit-transform: translate3d(0, 0%, 0) rotate(0.0001deg);
